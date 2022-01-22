@@ -21,7 +21,7 @@
 <p align="justify">Чем выше температура, тем у звезды цвет холоднее. И чем выше масса звезды, тем короче её жизненный цикл. Совсем массивные звёзды превращаются в нейтронные звёзды или чёрные дыры в конце своего существования.</p>
 <p align="justify">Единицы обсуждаемых величин, хоть и показаны в килограммах и кельвинах (см. рисунок выше), но всё равно являются по большей части выдуманными и несоответствующими реальным значениям температуры и массы подобных светил. Но в целом, для этой работы сойдут и такие, очень-очень приближённые значения. Это сделано для удобства реализации кода.</p>
 <p align="justify">Класс Universe описывает звёзды и используется в классе KMeans в процессе группировки (кластеризации). Класс Main по умолчанию начальная точка запуска всей программы. В Main рисуется также график при помощи модуля JFreeChart.</p>
-<p align="justify">Начальная выборка звёзд задаётся в том же классе Main в самом начале (см. код 1).</p>
+<p align="justify">Начальная выборка звёзд задаётся в том же классе Main в самом начале (см. код ниже).</p>
 
 <p align="left">
 <code>public static void <b>main</b>(String[] args) {</code><br>
@@ -33,4 +33,40 @@
 <code>&nbsp;&nbsp;&nbsp;&nbsp;stars[12] = "10000:7000.0;-1"; stars[13] = "13000:7300.0;-1"; stars[14] = "15500:7900.0;-1";</code><br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;stars[15] = "13700:1500.0;-1"; stars[16] = "15000:2100.0;-1"; stars[17] = "16000:3700.0;-1";</code><br>
 <code>}</code>
+</p>
+<p align="justify">В классе Universe есть массив строк stars, который и содержит в подобном формате описание всех звёзд (объектов). Массив выше (см. код 1) передаётся в качестве аргумента в конструктор класса Universe при его создании, и тем самым инициализируются все объекты Universe, над которыми и будет проводиться работа.</p>
+<p align="justify">Этот Universe, как было сказано чуть раньше, передаётся следом в конструктор уже KMeans — класс, который содержит в себе методы алгоритма кластеризации «k-means» [2,1]:</p>
+<p align="center"><code>KMeans kmeans = <b>new KMeans(new Universe(stars))</b>;</code></p>
+<p align="justify">Далее идёт вывод результатов в консоль и в окно модуля JFreeChart:</p>
+<p align="left">
+<code>XYSeries series = new XYSeries("Universe");</code><br><br>
+
+<code>int[] temperatures = kmeans.sample.getTemp();</code><br>
+<code>float[] masses = kmeans.sample.getMass();</code><br><br>
+
+<code>System.out.println(kmeans.sample);</code><br><br>
+
+<code>kmeans.run();</code><br><br>
+
+<code>System.out.println(kmeans.sample);</code><br><br>
+
+<code>for(int i = 0; i < kmeans.sample.count(); ++i) {</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;series.add(masses[i], temperatures[i]);</code><br>
+<code>}</code><br><br>
+
+<code>XYDataset xyDataset = new XYSeriesCollection(series);</code><br><br>
+
+<code>JFreeChart chart = ChartFactory</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;.createScatterPlot("Stars", "MASS", "TEMPERATURE",</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;xyDataset,</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;PlotOrientation.VERTICAL,</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;true, true, true);</code><br><br>
+
+<code>JFrame frame =</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;new JFrame("Clusterization");</code><br>
+<code>frame.getContentPane()</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;.add(new ChartPanel(chart));</code><br><br>
+
+<code>frame.setSize(400,300);</code><br>
+<code>frame.show();</code>
 </p>
