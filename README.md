@@ -190,6 +190,7 @@ i = 1	( 9440.0 ; 4920.0 )	cluster: 1.0
 i = 3	( 4320.0 ; 13540.0 )	cluster: 3.0
 i = 5	( 10340.0 ; 17175.0 )	cluster: 5.0
 <b>v = 1.20899075E8</b>
+
 0.
 	Temperature: 1000
 	Mass: 1000.0
@@ -280,4 +281,4 @@ i = 5	( 10340.0 ; 17175.0 )	cluster: 5.0
 	Mass: 3700.0
 	Cluster: 3
 </pre>
- </p></td></tr></table>
+<p align="center">Код 3 — Вывод программы в консоль</p></p></td></tr></table>
