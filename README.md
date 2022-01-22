@@ -37,7 +37,7 @@
 <p align="justify">В классе <code>Universe</code> есть массив строк <code>stars</code>, который и содержит в подобном формате описание всех звёзд (объектов). Массив выше (см. код 1) передаётся в качестве аргумента в конструктор класса <code>Universe</code> при его создании, и тем самым инициализируются все объекты <code>Universe</code>, над которыми и будет проводиться работа.</p>
 <p align="justify">Этот <code>Universe</code>, как было сказано чуть раньше, передаётся следом в конструктор уже <code>KMeans</code> — класс, который содержит в себе методы алгоритма кластеризации «k-means» [2,1]:</p>
 <p align="center"><code>KMeans kmeans = <b>new KMeans(new Universe(stars))</b>;</code></p>
-<p align="justify">Далее идёт вывод результатов в консоль и в окно модуля JFreeChart:</p>
+<p align="justify">Далее идёт вывод результатов в консоль и в окно модуля <code>JFreeChart</code>:</p>
 
 <table align="center"><tr><td><p align="left">
 <code>XYSeries series = new XYSeries("Universe");</code><br><br>
@@ -80,3 +80,204 @@
 <p align="justify">Класс Universe вбирает в себя весь код, необходимый для редактирования и чтения данных о его объектах. К примеру, публичный метод changeCluster() изменяет номер кластера какого-либо объекта, а метод getStars() выступает в роли геттера для переменной-массива класса stars.</p>
 <p align="justify">Полный код этого класса представлен в этом каталоге ГитХаба!<br></p>
 <p align="center"><img src="img/2.jpg" alt="Начальный некластеризованный набор звёзд наглядно на плоскости в виде точек" width="75%" height="90%"></img><br><span>Рисунок 2 — Начальный некластеризованный набор звёзд</span></p>
+<p align="justify">Как и код класса <code>Universe</code>, <code>KMeans</code> с основной частью этой лабораторной работы тоже представлен в этом репозитории ГитХаба.</p>
+<p align="justify">В итоге, из-за случайной компоненты при выборе начальных центров всех кластеров программа выдаёт несколько возможных вариантов группировки звёзд по шести кластерам.</p>
+<p align="justify">Первый вариант представлен в блоке Код 3 ниже.</p>
+<table align="center"><tr><td><p align="left"><pre>
+0)
+	Temperature: 1000
+	Mass: 1000.0
+	Cluster: 0
+
+1)
+	Temperature: 2050
+	Mass: 1400.0
+	Cluster: -1
+
+2)
+	Temperature: 3000
+	Mass: 2500.0
+	Cluster: -1
+
+3)
+	Temperature: 2100
+	Mass: 5600.0
+	Cluster: -1
+
+4)
+	Temperature: 5050
+	Mass: 6000.0
+	Cluster: -1
+
+5)
+	Temperature: 3000
+	Mass: 6900.0
+	Cluster: 1
+
+6)
+	Temperature: 4500
+	Mass: 11500.0
+	Cluster: -1
+
+7)
+	Temperature: 5050
+	Mass: 12000.0
+	Cluster: -1
+
+8)
+	Temperature: 7000
+	Mass: 10800.0
+	Cluster: -1
+
+9)
+	Temperature: 18100
+	Mass: 10350.0
+	Cluster: -1
+
+10)
+	Temperature: 18800
+	Mass: 11110.0
+	Cluster: 5
+
+11)
+	Temperature: 16300
+	Mass: 12000.0
+	Cluster: 5
+
+12)
+	Temperature: 10000
+	Mass: 7000.0
+	Cluster: -1
+
+13)
+	Temperature: 13000
+	Mass: 7300.0
+	Cluster: -1
+
+14)
+	Temperature: 15500
+	Mass: 7900.0
+	Cluster: -1
+
+15)
+	Temperature: 13700
+	Mass: 1500.0
+	Cluster: -1
+
+16)
+	Temperature: 15000
+	Mass: 2100.0
+	Cluster: 3
+
+17)
+	Temperature: 16000
+	Mass: 3700.0
+	Cluster: 3
+
+
+i = 0	( 1633.3333333333333 ; 2016.6666666666667 )	cluster: 0.0
+i = 1	( 8800.0 ; 4450.0 )	cluster: 1.0
+i = 3	( 4320.0 ; 13540.0 )	cluster: 3.0
+i = 5	( 10340.0 ; 17175.0 )	cluster: 5.0
+v = 1.2798692222222222E8
+i = 0	( 2625.0 ; 2037.5 )	cluster: 0.0
+i = 1	( 9440.0 ; 4920.0 )	cluster: 1.0
+i = 3	( 4320.0 ; 13540.0 )	cluster: 3.0
+i = 5	( 10340.0 ; 17175.0 )	cluster: 5.0
+v = 1.20899075E8
+i = 0	( 2625.0 ; 2037.5 )	cluster: 0.0
+i = 1	( 9440.0 ; 4920.0 )	cluster: 1.0
+i = 3	( 4320.0 ; 13540.0 )	cluster: 3.0
+i = 5	( 10340.0 ; 17175.0 )	cluster: 5.0
+v = 1.20899075E8
+0)
+	Temperature: 1000
+	Mass: 1000.0
+	Cluster: 0
+
+1)
+	Temperature: 2050
+	Mass: 1400.0
+	Cluster: 0
+
+2)
+	Temperature: 3000
+	Mass: 2500.0
+	Cluster: 0
+
+3)
+	Temperature: 2100
+	Mass: 5600.0
+	Cluster: 0
+
+4)
+	Temperature: 5050
+	Mass: 6000.0
+	Cluster: 1
+
+5)
+	Temperature: 3000
+	Mass: 6900.0
+	Cluster: 1
+
+6)
+	Temperature: 4500
+	Mass: 11500.0
+	Cluster: 1
+
+7)
+	Temperature: 5050
+	Mass: 12000.0
+	Cluster: 1
+
+8)
+	Temperature: 7000
+	Mass: 10800.0
+	Cluster: 1
+
+9)
+	Temperature: 18100
+	Mass: 10350.0
+	Cluster: 5
+
+10)
+	Temperature: 18800
+	Mass: 11110.0
+	Cluster: 5
+
+11)
+	Temperature: 16300
+	Mass: 12000.0
+	Cluster: 5
+
+12)
+	Temperature: 10000
+	Mass: 7000.0
+	Cluster: 3
+
+13)
+	Temperature: 13000
+	Mass: 7300.0
+	Cluster: 3
+
+14)
+	Temperature: 15500
+	Mass: 7900.0
+	Cluster: 5
+
+15)
+	Temperature: 13700
+	Mass: 1500.0
+	Cluster: 3
+
+16)
+	Temperature: 15000
+	Mass: 2100.0
+	Cluster: 3
+
+17)
+	Temperature: 16000
+	Mass: 3700.0
+	Cluster: 3
+</pre>
+ </p></td></tr></table>
