@@ -594,7 +594,7 @@ i = 5	( 11153.333333333334 ; 17733.333333333332 )	cluster: 5.0
 	<ol>
 		<li>k-means++ // Википедия. Свободная энциклопедия URL: https://ru.wikipedia.org/wiki/K-means%2B%2B (дата обращения: 18.01.2022).</li>
 		<li>Метод k-средних // Википедия. Свободная энциклопедия URL: https://ru.wikipedia.org/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4_k-%D1%81%D1%80%D0%B5%D0%B4%D0%BD%D0%B8%D1%85 (дата обращения: 18.01.2022).</li>
-		<li>JFreeChart // GitHub URL: https://github.com/jfree/jfreechart (дата обращения: 18.01.2022).</li>
+		<li name="jfreechart">JFreeChart // GitHub URL: https://github.com/jfree/jfreechart (дата обращения: 18.01.2022).</li>
 		<li>Лебедев А.С. Лекция 1 - Технологии анализа данных. Методы и средства извлечения знаний // Лекции по дисциплине "Информационные хранилища и информационно-аналитические системы". - М.: 2021</li>
 		<li>Кластеризация: метод k-средних // Портал Знаний. Глобальный интеллектуальный ресурс. StatSoft URL: http://statistica.ru/theory/klasterizatsiya-metod-k-srednikh/#:~:text=%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%20k%2D%D1%81%D1%80%D0%B5%D0%B4%D0%BD%D0%B8%D1%85%20%E2%80%93%20%D1%8D%D1%82%D0%BE%20%D0%BC%D0%B5%D1%82%D0%BE%D0%B4,(%D1%86%D0%B5%D0%BD%D1%82%D1%80%D0%BE%D0%B8%D0%B4%D1%83)%20%D0%BA%D0%BE%D1%82%D0%BE%D1%80%D0%BE%D0%B3%D0%BE%20%D0%BE%D0%BD%D0%BE%20%D0%B1%D0%BB%D0%B8%D0%B6%D0%B5%20%D0%B2%D1%81%D0%B5%D0%B3%D0%BE (дата обращения: 18.01.2022)</li>
 		<li>Плетнёва Мария, Конюшко Анастасия КЛАСТЕРИЗАЦИЯ. МЕТОДЫ K-MEANS, FUZZY C-MEANS // Презентация. – 2021</li>
@@ -609,5 +609,5 @@ i = 5	( 11153.333333333334 ; 17733.333333333332 )	cluster: 5.0
 		<li>https://habr.com/ru/post/208496/ (статья пользователя <b>andrewnester</b> 2014-го года);</li>
 		<li>https://github.com/omadson/fuzzy-c-means (реализация этого нечёткого алгоритма на Python пользователя ГитХаба <b>Madson Dias</b>).</li>
 		</ul></p></li>
-		<li><b>JFreeChart в виде jar-файла</b> для импорта его в ваш проект тоже лежит в папке "docx"! [3]</li>
+		<li><b>JFreeChart в виде jar-файла</b> для импорта его в ваш проект тоже лежит в папке "docx"! [<a href="#jfreechart">3</a>]</li>
 </ol>
