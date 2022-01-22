@@ -335,4 +335,30 @@ i = 5	( 10340.0 ; 17175.0 )	cluster: 5.0
 
 <code>&nbsp;&nbsp;return centers;</code><br>
 <code>}</code>
-</p>
+<p align="center">Код 4 — Метод <code>KMeans.init()</code></p></p></td></tr></table>
+<p align="justify">Буква <b>v</b> в выводе (см. код 3) обозначает <i>суммарное квадратичное отклонение</i> точек кластеров от центроидов этих кластеров [5]. Смысл алгоритма заключается в том, чтобы минимизировать это значение v:</p>
+<p align="center"><img src="img/math2.jpg" alt="Формула суммарного квадратичного отклонения" hight="25%" width="25%"></img></p>
+<p align="justify">Это значит максимально компактно сгруппировать все объекты к центрам кластеров (то есть к центроидам), чтобы получилось несколько вполне различных групп объектов.</p>
+<p align="justify">В формуле (1) μ_i — это центроид для кластера S_i; а k — это количество кластеров в исследовании (в этой работе их, напомним, шесть).</p>
+<p align="justify">В коде это значение, представленное формулой (1), выражается отдельным методом:</p>
+<table align="center"><tr><td><p align="left">
+<code>private double V(double[][] centers) {</code><br>
+	<code>&nbsp;&nbsp;int[] temperatures = sample.getTemp();</code><i>// массив температур звёзд</i><br>
+<code>&nbsp;&nbsp;float[] masses = sample.getMass();</code><i>// массив масс звёзд Вселенной</i><br>
+<code>&nbsp;&nbsp;int[] clusters = sample.getClusters();</code><i>// массив кластеров каждой звезды</i><br>
+<code>&nbsp;&nbsp;double sum = 0;</code><br><br>
+
+<code>&nbsp;&nbsp;for (int i = 0; i < centers.length; ++i)</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;for (int j = 0; j < sample.count(); ++j) {</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (clusters[j] == i)</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum += (centers[i][0] - masses[j]) * (centers[i][0] - masses[j]) + (centers[i][1] - temperatures[j]) * (centers[i][1] - temperatures[j]);</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br><br>
+
+<code>&nbsp;&nbsp;return sum;</code><br>
+	<code>}</code>
+</p></td></tr></table>
+<p align="justify">И используется в главном цикле <code>while</code> метода <code>run()</code>.</p>
+<p align="justify">Как можно заметить в выводе (см. код 3 выделенное жирным — значение <b>v</b>), это суммарное квадратичное отклонение <b>v</b> по ходу алгоритма уменьшается. А когда оно перестанет изменяться, алгоритм завершает свою работу. Это означает, что группы (кластеры) упакованы как можно компактнее в этой ситуации. Дальше уплотнять уже кластеры некуда.</p>
+<p align="justify">На рисунке 3 изображено графическое представление вывода (код 3).</p>
+<p align="center"><img src="img/3.jpg" alt="Первый результат работы программы k-means наглядно на координатной плоскости" width="80%" height="95%"></img><br>
+<p align="center">Рисунок 3 — Первый результат работы программы k-means</p></p>
