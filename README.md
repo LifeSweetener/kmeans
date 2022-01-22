@@ -288,3 +288,51 @@ i = 5	( 10340.0 ; 17175.0 )	cluster: 5.0
 <p align="justify">Метод <code>init()</code> класса <code>KMeans</code> инициализирует алгоритм и определяет начальные центры всех групп. В нём используется класс <code>Random</code>, генерирующий псевдослучайные числа. См. код 4.</p>
 <p>Расстояния (а р<i>а</i>вно различия) между объектами представлены Евклидовой метрикой:</p>
 <p align="center"><img src="img/math1.jpg" alt="Формула расстояния" width="25%" height="25%"></img></p>
+<p align="justify">Чем больше расстояние <b>d</b>, тем больше различие между двумя объектами (см. код 4, выделенное жирным).</p>
+<table align="center"><tr><td><p align="left">
+<code>private int[] init() {</code><br>
+<code>&nbsp;&nbsp;Random random = new Random();</code><br>
+<code>&nbsp;&nbsp;int[] centers = new int[CLUSTERS_NUM];</code><br>
+<code>&nbsp;&nbsp;Arrays.fill(centers, -2);</code><br>
+<code>&nbsp;&nbsp;int counter = 0;</code><br>
+<code>&nbsp;&nbsp;centers[counter++] = random.nextInt(sample.count()-1);</code><br>
+
+<code>&nbsp;&nbsp;int[] temperatures = sample.getTemp();</code><i>&nbsp;&nbsp;// массив температур звёзд</i><br>
+<code>&nbsp;&nbsp;float[] masses = sample.getMass();</code><i>&nbsp;&nbsp;// массив масс звёзд Вселенной</i><br>
+<code>&nbsp;&nbsp;int[] clusters = sample.getClusters();</code><i>&nbsp;&nbsp;// массив кластеров каждой звезды</i><br>
+
+<i>&nbsp;&nbsp;// Поэтапно определить все необходимые центроиды:</i><br>
+<code>&nbsp;&nbsp;while (counter < this.CLUSTERS_NUM) {</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;double[] min_distances = new double[sample.count()];</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;double[][] distances = new double[sample.count()][sample.count()];</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;double sum = 0;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i < temperatures.length; ++i) {</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double min = -1;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;for (int j = 0; j < counter; ++j) {</code><br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;distances[i][j] = (temperatures[centers[j]] - temperatures[i]) * (temperatures[centers[j]] - temperatures[i]) + (masses[centers[j]] - masses[i]) * (masses[centers[j]] - masses[i]);</b><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (min == -1)</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min = distances[i][j];</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (min > distances[i][j])</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min = distances[i][j];</code><br><br>
+
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_distances[i] = min;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum += min;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br><br>
+<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Выбрать следующий случайный центроид, опираясь уже на проставленные (см. выше) вероятности выбора:</i><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double rnd = random.nextDouble() * sum;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum = 0;</code><br><br>
+
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean flag = false;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i < temperatures.length; ++i) {</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum += min_distances[i];</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (sum > rnd) {</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;centers[counter++] = i;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+<code>&nbsp;&nbsp;}</code><br><br>
+
+<code>&nbsp;&nbsp;return centers;</code><br>
+<code>}</code>
+</p>
