@@ -609,4 +609,5 @@ i = 5	( 11153.333333333334 ; 17733.333333333332 )	cluster: 5.0
 		<li>https://habr.com/ru/post/208496/ (статья пользователя <b>andrewnester</b> 2014-го года);</li>
 		<li>https://github.com/omadson/fuzzy-c-means (реализация этого нечёткого алгоритма на Python пользователя ГитХаба <b>Madson Dias</b>).</li>
 		</ul></p></li>
+		<li><b>JFreeChart в виде jar-файла</b> для импорта его в ваш проект тоже лежит в папке "docx"!</li>
 </ol>
