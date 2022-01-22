@@ -308,29 +308,29 @@ i = 5	( 10340.0 ; 17175.0 )	cluster: 5.0
 <code>&nbsp;&nbsp;&nbsp;&nbsp;double sum = 0;</code><br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i < temperatures.length; ++i) {</code><br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double min = -1;</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;for (int j = 0; j < counter; ++j) {</code><br>
-<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;distances[i][j] = (temperatures[centers[j]] - temperatures[i]) * (temperatures[centers[j]] - temperatures[i]) + (masses[centers[j]] - masses[i]) * (masses[centers[j]] - masses[i]);</b><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (min == -1)</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min = distances[i][j];</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (min > distances[i][j])</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min = distances[i][j];</code><br><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int j = 0; j < counter; ++j) {</code><br>
+<b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;distances[i][j] = (temperatures[centers[j]] - temperatures[i]) * (temperatures[centers[j]] - temperatures[i]) + (masses[centers[j]] - masses[i]) * (masses[centers[j]] - masses[i]);</b><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (min == -1)</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min = distances[i][j];</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if (min > distances[i][j])</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min = distances[i][j];</code><br><br>
 
 <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;min_distances[i] = min;</code><br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum += min;</code><br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br><br>
-<i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Выбрать следующий случайный центроид, опираясь уже на проставленные (см. выше) вероятности выбора:</i><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;double rnd = random.nextDouble() * sum;</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum = 0;</code><br><br>
+<i>&nbsp;&nbsp;&nbsp;&nbsp;// Выбрать следующий случайный центроид, опираясь уже на проставленные (см. выше) вероятности выбора:</i><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;double rnd = random.nextDouble() * sum;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;sum = 0;</code><br><br>
 
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean flag = false;</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i < temperatures.length; ++i) {</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum += min_distances[i];</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (sum > rnd) {</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;centers[counter++] = i;</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;boolean flag = false;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i < temperatures.length; ++i) {</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum += min_distances[i];</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (sum > rnd) {</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;centers[counter++] = i;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</code><br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
 <code>&nbsp;&nbsp;}</code><br><br>
 
 <code>&nbsp;&nbsp;return centers;</code><br>
