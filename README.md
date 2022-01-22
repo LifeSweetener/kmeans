@@ -38,7 +38,7 @@
 <p align="justify">Этот Universe, как было сказано чуть раньше, передаётся следом в конструктор уже KMeans — класс, который содержит в себе методы алгоритма кластеризации «k-means» [2,1]:</p>
 <p align="center"><code>KMeans kmeans = <b>new KMeans(new Universe(stars))</b>;</code></p>
 <p align="justify">Далее идёт вывод результатов в консоль и в окно модуля JFreeChart:</p>
-<p align="left">
+<p align="left" border="black solid 2px">
 <code>XYSeries series = new XYSeries("Universe");</code><br><br>
 
 <code>int[] temperatures = kmeans.sample.getTemp();</code><br>
