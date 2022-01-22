@@ -23,9 +23,9 @@
 <p align="justify">Класс Universe описывает звёзды и используется в классе KMeans в процессе группировки (кластеризации). Класс Main по умолчанию начальная точка запуска всей программы. В Main рисуется также график при помощи модуля JFreeChart.</p>
 <p align="justify">Начальная выборка звёзд задаётся в том же классе Main в самом начале (см. код 1).</p>
 
-<code background="yellow">
-public static void main(String[] args) {<br>
-String[] stars = new String[18];<br>
+<code align="center">
+public static void <br>main</br>(String[] args) {<br>
+String[] <br>stars</br> = new String[18];<br>
 stars[0] = "1000:1000.0;-1"; stars[1] = "2050:1400.0;-1"; stars[2] = "3000:2500.0;-1";<br>
 stars[3] = "2100:5600.0;-1"; stars[4] = "5050:6000.0;-1"; stars[5] = "3000:6900.0;-1";<br>
 stars[6] = "4500:11500.0;-1"; stars[7] = "5050:12000.0;-1"; stars[8] = "7000:10800.0;-1";<br>
