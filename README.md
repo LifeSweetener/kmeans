@@ -326,11 +326,11 @@ i = 5	( 10340.0 ; 17175.0 )	cluster: 5.0
 <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;boolean flag = false;</code><br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (int i = 0; i < temperatures.length; ++i) {</code><br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sum += min_distances[i];</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (sum > rnd) {</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;centers[counter++] = i;</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (sum > rnd) {</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;centers[counter++] = i;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
-<code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
 <code>&nbsp;&nbsp;}</code><br><br>
 
 <code>&nbsp;&nbsp;return centers;</code><br>
