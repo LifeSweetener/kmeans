@@ -337,7 +337,7 @@ i = 5	( 10340.0 ; 17175.0 )	cluster: 5.0
 <code>}</code>
 <p align="center">Код 4 — Метод <code>KMeans.init()</code></p></p></td></tr></table>
 <p align="justify">Буква <b>v</b> в выводе (см. код 3) обозначает <i>суммарное квадратичное отклонение</i> точек кластеров от центроидов этих кластеров [5]. Смысл алгоритма заключается в том, чтобы минимизировать это значение <b>v</b>:</p>
-<p align="right"><img src="img/math2.jpg" alt="Формула суммарного квадратичного отклонения" hight="55%" width="55%"></img></p>
+<p align="center"><img src="img/math2.jpg" alt="Формула суммарного квадратичного отклонения" hight="55%" width="55%"></img></p>
 <p align="justify">Это значит максимально компактно сгруппировать все объекты к центрам кластеров (то есть к центроидам), чтобы получилось несколько вполне различных групп объектов.</p>
 <p align="justify">В формуле (1) <b>μ_i</b> — это центроид для кластера <b>S_i</b>; а <b>k</b> — это количество кластеров в исследовании (в этой работе их, напомним, шесть).</p>
 <p align="justify">В коде это значение, представленное формулой (1), выражается отдельным методом:</p>
@@ -362,3 +362,213 @@ i = 5	( 10340.0 ; 17175.0 )	cluster: 5.0
 <p align="justify">На рисунке 3 изображено графическое представление вывода (код 3).</p>
 <p align="center"><img src="img/3.jpg" alt="Первый результат работы программы k-means наглядно на координатной плоскости" width="80%" height="95%"></img><br>
 <p align="center">Рисунок 3 — Первый результат работы программы k-means</p></p>
+
+<table align="center"><tr><td><p align="left"><pre>
+0.
+	Temperature: 1000
+	Mass: 1000.0
+	<b>Cluster: 0</b>
+
+1)
+	Temperature: 2050
+	Mass: 1400.0
+	Cluster: -1
+
+2)
+	Temperature: 3000
+	Mass: 2500.0
+	Cluster: -1
+
+3)
+	Temperature: 2100
+	Mass: 5600.0
+	Cluster: -1
+
+4)
+	Temperature: 5050
+	Mass: 6000.0
+	Cluster: -1
+
+5)
+	Temperature: 3000
+	Mass: 6900.0
+	<b>Cluster: 1</b>
+
+6)
+	Temperature: 4500
+	Mass: 11500.0
+	Cluster: -1
+
+7)
+	Temperature: 5050
+	Mass: 12000.0
+	Cluster: -1
+
+8)
+	Temperature: 7000
+	Mass: 10800.0
+	<b>Cluster: 2</b>
+
+9)
+	Temperature: 18100
+	Mass: 10350.0
+	<b>Cluster: 5</b>
+
+10)
+	Temperature: 18800
+	Mass: 11110.0
+	Cluster: -1
+
+11)
+	Temperature: 16300
+	Mass: 12000.0
+	Cluster: -1
+
+12)
+	Temperature: 10000
+	Mass: 7000.0
+	Cluster: -1
+
+13)
+	Temperature: 13000
+	Mass: 7300.0
+	Cluster: -1
+
+14)
+	Temperature: 15500
+	Mass: 7900.0
+	<b>Cluster: 4</b>
+
+15)
+	Temperature: 13700
+	Mass: 1500.0
+	Cluster: -1
+
+16)
+	Temperature: 15000
+	Mass: 2100.0
+	<b>Cluster: 3</b>
+
+17)
+	Temperature: 16000
+	Mass: 3700.0
+	Cluster: -1
+
+
+i = 0	( 1633.3333333333333 ; 2016.6666666666667 )	cluster: 0.0
+i = 1	( 6166.666666666667 ; 3383.3333333333335 )	cluster: 1.0
+i = 2	( 10325.0 ; 6637.5 )	cluster: 2.0
+i = 3	( 2433.3333333333335 ; 14900.0 )	cluster: 3.0
+i = 4	( 7600.0 ; 14250.0 )	cluster: 4.0
+i = 5	( 11153.333333333334 ; 17733.333333333332 )	cluster: 5.0
+<b>v = 5.196391041666666E7</b>
+i = 0	( 1633.3333333333333 ; 2016.6666666666667 )	cluster: 0.0
+i = 1	( 6166.666666666667 ; 3383.3333333333335 )	cluster: 1.0
+i = 2	( 11433.333333333334 ; 5516.666666666667 )	cluster: 2.0
+i = 3	( 2433.3333333333335 ; 14900.0 )	cluster: 3.0
+i = 4	( 7400.0 ; 12833.333333333334 )	cluster: 4.0
+i = 5	( 11153.333333333334 ; 17733.333333333332 )	cluster: 5.0
+<b>v = 3.836906666666666E7</b>
+i = 0	( 1633.3333333333333 ; 2016.6666666666667 )	cluster: 0.0
+i = 1	( 6166.666666666667 ; 3383.3333333333335 )	cluster: 1.0
+i = 2	( 11433.333333333334 ; 5516.666666666667 )	cluster: 2.0
+i = 3	( 2433.3333333333335 ; 14900.0 )	cluster: 3.0
+i = 4	( 7400.0 ; 12833.333333333334 )	cluster: 4.0
+i = 5	( 11153.333333333334 ; 17733.333333333332 )	cluster: 5.0
+<b>v = 3.836906666666666E7</b>
+0.
+	Temperature: 1000
+	Mass: 1000.0
+	Cluster: 0
+
+1)
+	Temperature: 2050
+	Mass: 1400.0
+	Cluster: 0
+
+2)
+	Temperature: 3000
+	Mass: 2500.0
+	Cluster: 0
+
+3)
+	Temperature: 2100
+	Mass: 5600.0
+	Cluster: 1
+
+4)
+	Temperature: 5050
+	Mass: 6000.0
+	Cluster: 1
+
+5)
+	Temperature: 3000
+	Mass: 6900.0
+	Cluster: 1
+
+6)
+	Temperature: 4500
+	Mass: 11500.0
+	Cluster: 2
+
+7)
+	Temperature: 5050
+	Mass: 12000.0
+	Cluster: 2
+
+8)
+	Temperature: 7000
+	Mass: 10800.0
+	Cluster: 2
+
+9)
+	Temperature: 18100
+	Mass: 10350.0
+	Cluster: 5
+
+10)
+	Temperature: 18800
+	Mass: 11110.0
+	Cluster: 5
+
+11)
+	Temperature: 16300
+	Mass: 12000.0
+	Cluster: 5
+
+12)
+	Temperature: 10000
+	Mass: 7000.0
+	Cluster: 4
+
+13)
+	Temperature: 13000
+	Mass: 7300.0
+	Cluster: 4
+
+14)
+	Temperature: 15500
+	Mass: 7900.0
+	Cluster: 4
+
+15)
+	Temperature: 13700
+	Mass: 1500.0
+	Cluster: 3
+
+16)
+	Temperature: 15000
+	Mass: 2100.0
+	Cluster: 3
+
+17)
+	Temperature: 16000
+	Mass: 3700.0
+	Cluster: 3
+
+</pre>
+</p></td></tr></table>
+<p align="justify">Это идеальный для поставленной в этой работе задачи результат! Выделены все шесть кластеров, и объекты сгруппированы в них, как того хотелось изначально.</p>
+<p align="justify">Графически результат выглядит так, как показано на рисунке ниже.</p>
+
+<p align="center"><img src="img/4.jpg" alt="Наглядно графически на координатной плоскости результаты второго теста алгоритма k-means" hight="85%" width="90%"></img></p>
