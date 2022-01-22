@@ -84,10 +84,10 @@
 <p align="justify">В итоге, из-за случайной компоненты при выборе начальных центров всех кластеров программа выдаёт несколько возможных вариантов группировки звёзд по шести кластерам.</p>
 <p align="justify">Первый вариант представлен в блоке Код 3 ниже.</p>
 <table align="center"><tr><td><p align="left"><pre>
-0)
+0.
 	Temperature: 1000
 	Mass: 1000.0
-	Cluster: 0
+	<b>Cluster: 0</b>
 
 1)
 	Temperature: 2050
@@ -112,7 +112,7 @@
 5)
 	Temperature: 3000
 	Mass: 6900.0
-	Cluster: 1
+	<b>Cluster: 1</b>
 
 6)
 	Temperature: 4500
@@ -137,12 +137,12 @@
 10)
 	Temperature: 18800
 	Mass: 11110.0
-	Cluster: 5
+	<b>Cluster: 5</b>
 
 11)
 	Temperature: 16300
 	Mass: 12000.0
-	Cluster: 5
+	<b>Cluster: 5</b>
 
 12)
 	Temperature: 10000
@@ -167,12 +167,12 @@
 16)
 	Temperature: 15000
 	Mass: 2100.0
-	Cluster: 3
+	<b>Cluster: 3</b>
 
 17)
 	Temperature: 16000
 	Mass: 3700.0
-	Cluster: 3
+	<b>Cluster: 3</b>
 
 
 i = 0	( 1633.3333333333333 ; 2016.6666666666667 )	cluster: 0.0
@@ -184,13 +184,13 @@ i = 0	( 2625.0 ; 2037.5 )	cluster: 0.0
 i = 1	( 9440.0 ; 4920.0 )	cluster: 1.0
 i = 3	( 4320.0 ; 13540.0 )	cluster: 3.0
 i = 5	( 10340.0 ; 17175.0 )	cluster: 5.0
-v = 1.20899075E8
+<b>v = 1.20899075E8</b>
 i = 0	( 2625.0 ; 2037.5 )	cluster: 0.0
 i = 1	( 9440.0 ; 4920.0 )	cluster: 1.0
 i = 3	( 4320.0 ; 13540.0 )	cluster: 3.0
 i = 5	( 10340.0 ; 17175.0 )	cluster: 5.0
-v = 1.20899075E8
-0)
+<b>v = 1.20899075E8</b>
+0.
 	Temperature: 1000
 	Mass: 1000.0
 	Cluster: 0
