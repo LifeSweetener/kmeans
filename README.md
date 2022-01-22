@@ -24,7 +24,7 @@
 <p align="justify">Начальная выборка звёзд задаётся в том же классе Main в самом начале (см. код 1).</p>
 
 <p align="left">
-<code>public static void <br>main</br>(String[] args) {</code><br>
+<code>public static void <b>main</b>(String[] args) {</code><br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;String[] <br>stars</br> = new String[18];</code><br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;stars[0] = "1000:1000.0;-1"; stars[1] = "2050:1400.0;-1"; stars[2] = "3000:2500.0;-1";</code><br>
 <code>&nbsp;&nbsp;&nbsp;&nbsp;stars[3] = "2100:5600.0;-1"; stars[4] = "5050:6000.0;-1"; stars[5] = "3000:6900.0;-1";</code><br>
